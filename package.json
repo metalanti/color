@@ -11,6 +11,10 @@
     "dev": "node index.js",
     "watch": "npm-watch"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metalanti/color.git"
+  },
   "author": "anti",
   "license": "ISC",
   "dependencies": {
