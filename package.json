@@ -1,0 +1,27 @@
+{
+  "name": "color",
+  "version": "0.0.1",
+  "description": "colorize",
+  "main": "index.js",
+  "watch": {
+    "dev": "index.js"
+  },
+  "scripts": {
+    "start": "PORT=42710 node index.js",
+    "dev": "node index.js",
+    "watch": "npm-watch"
+  },
+  "author": "anti",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "hashids": "~1.1.1",
+    "lodash": "~4.16.4",
+    "lowdb": "^0.13.1",
+    "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {
+    "npm-watch": "^0.1.6"
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Colorize</title>
+		<link rel="apple-touch-icon" sizes="57x57" href="/public/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/public/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/public/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/public/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/public/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/public/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/public/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/public/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/public/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="/public/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon/favicon-16x16.png">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="manifest" href="/public/favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/public/favicon/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="/public/css/app.css">
+		<script type="text/javascript" src="/vendor/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/public/js/app.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<form class="validate colorize">
+						<div class="form-group">
+							<label for="config">Configuration</label>
+							<a href="#info" class="btn btn-info btn-xs pull-right" data-toggle="modal">
+								<span class="glyphicon glyphicon-info-sign"></span>
+							</a>
+							<textarea name="config" id="config" class="form-control" required data-rule-json="true">#conf#</textarea>
+						</div>
+						<div class="row">
+							<div class="col-xs-4">
+								<button type="submit" class="btn btn-success btn-block">Apply</button>
+							</div>
+							<div class="col-xs-4">
+								<a href="#" class="btn btn-warning btn-block pause">
+									<span class="glyphicon glyphicon-pause"></span> Pause
+								</a>
+								<a href="#" class="btn btn-warning btn-block play">
+									<span class="glyphicon glyphicon-play"></span> Play
+								</a>
+							</div>
+							<div class="col-xs-4">
+								<a href="/" class="btn btn-primary btn-block save">
+									Save
+									<span class="glyphicon glyphicon-ok done" style="display: none;"></span>
+									<span class="glyphicon glyphicon-remove fail" style="display: none;"></span>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" tabindex="-1" role="dialog" id="info">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title">Information</h4>
+					</div>
+					<div class="modal-body">
+						<h3>Configuration</h3>
+						<p>Write a <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> formatted text, that controls the page's background color. The main array (square brackets) contains the <i>states</i>. Each state has a <i>step</i> and an <i>RGB (red, green, blue)</i> parameters. The RGB parameters have a <i>from</i> and a <i>to</i> property, which defines the start color and the end color of the state. The step parameter means the number of steps between the start and the end of the state.</p>
+						<p>The config must be a JSON or else you could not Apply it or Save it!</p>
+						<h3>Save</h3>
+						<p>You can save your config to the server, it will get an unique URL you can share with your friends.</p>
+						<h3>About</h3>
+						<p>anti (antallac@gmail.com)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
