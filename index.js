@@ -14,7 +14,8 @@ db.defaults({
 	posts: [{
 		id: 1,
 		conf: default_conf,
-		hash: hashids.encode(1)
+		hash: hashids.encode(1),
+		timestamp: Date.now()
 	}]
 }).value();
 
@@ -44,26 +45,18 @@ app.set('view engine', 'nti');
 
 app.get('/:hash?', function(req, res) {
 	var hash = req.params.hash,
-		id = 1;
-	try {
-		var decode = hashids.decode(hash);
-	} catch (e) {
+		post = db.get('posts').find({
+			hash: hash
+		}).value();
+
+	if (hash && !post) {
 		return res.redirect('/');
 	}
-
-	if (hash && decode.length == 1) {
-		id = decode[0];
+	if (!post) {
+		post = db.get('posts').first().value();
 	}
 
-	var post = db.get('posts').find({
-		id: id
-	}).value();
-
-	if ((hash && decode.length != 1) || !post) {
-		return res.redirect('/');
-	}
-
-	res.render('index', {
+	return res.render('index', {
 		data: {
 			conf: JSON.stringify(JSON.parse(post.conf), null, 4)
 		}
@@ -95,11 +88,12 @@ app.post('/', function(req, res) {
 		posts.push({
 			id: id,
 			conf: conf,
-			hash: hash
+			hash: hash,
+			timestamp: Date.now()
 		}).value();
 	}
 
-	res.json({
+	return res.json({
 		hash: hash
 	}).end();
 });

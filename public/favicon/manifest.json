@@ -1,5 +1,6 @@
 {
- "name": "App",
+ "name": "Colorize",
+ "display": "standalone",
  "icons": [
   {
    "src": "\/public\/favicon\/android-icon-36x36.png",

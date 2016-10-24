@@ -81,7 +81,7 @@
 						<p>Write a <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> formatted text, that controls the page's background color. The main array (square brackets) contains the <i>states</i>. Each state has a <i>step</i> and an <i>RGB (red, green, blue)</i> parameters. The RGB parameters have a <i>from</i> and a <i>to</i> property, which defines the start color and the end color of the state. The step parameter means the number of steps between the start and the end of the state.</p>
 						<p>The config must be a JSON or else you could not Apply it or Save it!</p>
 						<h3>Save</h3>
-						<p>You can save your config to the server, it will get an unique URL you can share with your friends.</p>
+						<p>You can save your config to the server, it will get a unique URL you can share with your friends.</p>
 						<h3>About</h3>
 						<p><a href="https://github.com/metalanti/color" target="_blank">https://github.com/metalanti/color</a></p>
 					</div>
